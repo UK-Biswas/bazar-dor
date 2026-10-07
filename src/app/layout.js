@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         <Marquee></Marquee>
 
         <div className="bg-[#F0F5F0]">
-          <main className="container mx-auto py-4 ">
+          <main className="container mx-auto py-4">
             {children}
           </main>
         </div>
