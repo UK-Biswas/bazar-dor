@@ -1,14 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Marquee from "./components/Marquee";
+import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const noto_Serif_Bengali = Noto_Serif_Bengali({
+  subsets: ["latin", "bengali"],
 });
 
 export const metadata = {
@@ -20,9 +17,22 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-theme='light'
+      className={`${noto_Serif_Bengali.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header></Header>
+        <Marquee></Marquee>
+
+        <div className="bg-[#F0F5F0]">
+          <main className="container mx-auto py-4 ">
+            {children}
+          </main>
+        </div>
+
+        <Footer></Footer>
+
+      </body>
     </html>
   );
 }
