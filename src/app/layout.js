@@ -66,6 +66,7 @@ export default function RootLayout({ children }) {
         <div className="bg-[#F0F5F0]">
           <main className="container mx-auto py-4">
             {children}
+            <ToasterProvider></ToasterProvider>
           </main>
         </div>
 

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "@heroui/react";
+import { toast } from "react-toastify";
 
 import { authClient } from "../lib/auth-client";
 import AuthSocialButtons from "../components/AuthSocialButtons";
@@ -30,7 +30,7 @@ const SignUpPage = () => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.password) {
-      toast.error("সবগুলো তথ্য পূরণ করুন");
+      toast.danger("সবগুলো তথ্য পূরণ করুন");
       return;
     }
 

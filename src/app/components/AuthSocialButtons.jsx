@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { toast } from "@heroui/react";
+import { toast } from "react-toastify";
 import { authClient } from "../lib/auth-client";
 
-const AuthSocialButtons = () => {
+const AuthSocialButtons = ({ callbackUrl = "/" }) => {
   const [loading, setLoading] = useState("");
 
   const handleSocialLogin = async (provider) => {
@@ -13,7 +13,7 @@ const AuthSocialButtons = () => {
 
       const { error } = await authClient.signIn.social({
         provider,
-        callbackURL: "/",
+        callbackURL: callbackUrl,
       });
 
       if (error) {
@@ -21,22 +21,27 @@ const AuthSocialButtons = () => {
         setLoading("");
       }
     } catch (error) {
-      toast.error("Something went wrong");
+      toast.error("কিছু একটা সমস্যা হয়েছে");
       setLoading("");
     }
   };
 
   return (
     <div className="space-y-3">
+
       <button
         type="button"
         onClick={() => handleSocialLogin("google")}
         disabled={loading !== ""}
         className="w-full h-11 border border-gray-300 rounded-md flex items-center justify-center gap-3 bg-white hover:bg-gray-50 transition disabled:opacity-60"
       >
-        <span className="font-semibold text-red-500">G</span>
+        <span className="font-semibold text-red-500">
+          G
+        </span>
 
-        {loading === "google" ? "Google হচ্ছে..." : "Google দিয়ে চালিয়ে যান"}
+        {loading === "google"
+          ? "Google হচ্ছে..."
+          : "Google দিয়ে চালিয়ে যান"}
       </button>
 
       <button
@@ -45,10 +50,15 @@ const AuthSocialButtons = () => {
         disabled={loading !== ""}
         className="w-full h-11 border border-gray-300 rounded-md flex items-center justify-center gap-3 bg-white hover:bg-gray-50 transition disabled:opacity-60"
       >
-        <span className="font-semibold text-gray-800">GitHub</span>
+        <span className="font-semibold text-gray-800">
+          GitHub
+        </span>
 
-        {loading === "github" ? "GitHub হচ্ছে..." : "GitHub দিয়ে চালিয়ে যান"}
+        {loading === "github"
+          ? "GitHub হচ্ছে..."
+          : "GitHub দিয়ে চালিয়ে যান"}
       </button>
+
     </div>
   );
 };

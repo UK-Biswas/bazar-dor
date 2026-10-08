@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "@heroui/react";
+import { toast } from "react-toastify";
 
 import { authClient } from "@/lib/auth-client";
 

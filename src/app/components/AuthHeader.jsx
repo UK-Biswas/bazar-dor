@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "@heroui/react";
+import { toast } from "react-toastify";
 import Image from "next/image";
 
 import { authClient } from "../lib/auth-client";

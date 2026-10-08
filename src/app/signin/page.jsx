@@ -1,15 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { toast } from "@heroui/react";
+import { toast } from "react-toastify";
 
 import { authClient } from "../lib/auth-client";
 import AuthSocialButtons from "../components/AuthSocialButtons";
 
 const SignInPage = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const callbackUrl =
+    searchParams.get("callbackUrl") || "/";
 
   const [formData, setFormData] = useState({
     email: "",
@@ -39,21 +43,20 @@ const SignInPage = () => {
       const { error } = await authClient.signIn.email({
         email: formData.email,
         password: formData.password,
-        callbackURL: "/",
       });
 
       if (error) {
         toast.error(error.message || "লগইন করা যায়নি");
-        setLoading(false);
         return;
       }
 
       toast.success("সফলভাবে লগইন হয়েছে");
 
-      router.push("/");
+      router.push(callbackUrl);
       router.refresh();
     } catch (error) {
       toast.error("কিছু একটা সমস্যা হয়েছে");
+    } finally {
       setLoading(false);
     }
   };
@@ -118,11 +121,15 @@ const SignInPage = () => {
 
           <div className="flex items-center gap-3 my-5">
             <div className="h-px bg-gray-200 flex-1" />
-            <span className="text-xs text-gray-400">অথবা</span>
+            <span className="text-xs text-gray-400">
+              অথবা
+            </span>
             <div className="h-px bg-gray-200 flex-1" />
           </div>
 
-          <AuthSocialButtons />
+          <AuthSocialButtons
+            callbackUrl={callbackUrl}
+          />
 
           <p className="text-center text-sm text-gray-500 mt-5">
             অ্যাকাউন্ট নেই?{" "}

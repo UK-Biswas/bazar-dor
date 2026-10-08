@@ -1,16 +1,21 @@
 "use client";
 
-import { Toast } from "@heroui/react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ToasterProvider = () => {
-  return (
-    <Toast.Provider
-      placement="top end"
-      maxVisibleToasts={3}
-      gap={12}
-      width={420}
-    />
-  );
+return (
+<ToastContainer
+   position="top-right"
+   autoClose={3000}
+   hideProgressBar={false}
+   newestOnTop
+   closeOnClick
+   pauseOnHover
+   draggable
+   theme="colored"
+ />
+);
 };
 
 export default ToasterProvider;
