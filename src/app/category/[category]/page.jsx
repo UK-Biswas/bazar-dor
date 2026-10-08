@@ -1,10 +1,10 @@
-import ProductSection from "../../components/products/ProductSection";
+import CategoryProductSection from "../../components/products/CategoryProductSection";
 
 const CategoryPage = async ({ params }) => {
   const { category } = await params;
 
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
+    "https://api.abcz.workers.dev/api/bazardor/products",
     {
       cache: "no-store",
     }
@@ -18,7 +18,7 @@ const CategoryPage = async ({ params }) => {
 
   return (
     <main>
-      <ProductSection
+      <CategoryProductSection
         title={categoryProducts[0]?.categoryNameBn || category}
         products={categoryProducts}
       />

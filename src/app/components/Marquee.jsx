@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import MarqueeText from "react-marquee-text";
 
 const API_URL =
-    "https://api.api-store.workers.dev/api/bazardor/products";
+    "https://api.abcz.workers.dev/api/bazardor/products";
 
 const Marquee = () => {
     const [products, setProducts] = useState([]);
