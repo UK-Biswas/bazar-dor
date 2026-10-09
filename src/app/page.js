@@ -4,7 +4,7 @@ import ProductSection from "./components/products/ProductSection";
 
 export default async function Home() {
     const res = await fetch(
-        "https://api.abcz.workers.dev/api/bazardor/products",
+        "https://api.api-store.workers.dev/api/bazardor/products",
         {
             cache: "no-store",
         }
