@@ -17,6 +17,9 @@ const AuthHeader = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
+  console.log("User data:", session?.user);
+console.log("Google image:", session?.user?.image);
+
   useEffect(() => {
     if (!isPending && session) {
       router.refresh();
@@ -222,3 +225,6 @@ const AuthHeader = () => {
 };
 
 export default AuthHeader;
+
+
+

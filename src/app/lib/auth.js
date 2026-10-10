@@ -27,6 +27,18 @@ export const auth = betterAuth({
     google: {
       clientId: process.env.BETTER_AUTH_GOOGLE_CLIENT_ID,
       clientSecret: process.env.BETTER_AUTH_GOOGLE_SECRET,
+
+      mapProfileToUser: (profile) => {
+        console.log("Google profile received:", {
+          name: profile.name,
+          picture: profile.picture,
+        });
+
+        return {
+          name: profile.name,
+          image: profile.picture,
+        };
+      },
     },
 
     github: {
@@ -34,7 +46,6 @@ export const auth = betterAuth({
       clientSecret: process.env.BETTER_AUTH_GITHUB_SECRET,
     },
   },
-
   account: {
     accountLinking: {
       enabled: true,

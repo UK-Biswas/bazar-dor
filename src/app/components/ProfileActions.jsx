@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { authClient } from "../lib/auth-client";
 
@@ -12,10 +11,6 @@ const ProfileActions = ({ initialName = "" }) => {
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
-
-  useEffect(() => {
-    setName(initialName);
-  }, [initialName]);
 
   const handleSave = async (event) => {
     event.preventDefault();
@@ -139,3 +134,4 @@ const ProfileActions = ({ initialName = "" }) => {
 };
 
 export default ProfileActions;
+

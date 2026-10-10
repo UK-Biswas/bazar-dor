@@ -295,30 +295,6 @@ BazarDor can be deployed using Vercel or another compatible hosting platform.
 
 ---
 
-## 🧪 Testing Checklist
-
-Before submitting the project, verify the following:
-
-* [ ] The homepage loads product information correctly.
-* [ ] Price increases and decreases display correctly.
-* [ ] Product cards show the correct names, units, and prices.
-* [ ] Category filtering works correctly.
-* [ ] Sorting works numerically, including Bengali numerals.
-* [ ] Product detail pages display the available price information.
-* [ ] Unauthenticated users cannot access protected routes.
-* [ ] Registration and login work correctly.
-* [ ] Google and GitHub authentication work when configured.
-* [ ] Logout displays the appropriate notification.
-* [ ] Profile information can be updated.
-* [ ] Loading skeletons appear during data fetching.
-* [ ] Unknown routes display the custom 404 page.
-* [ ] Dynamic routes work after refreshing the deployed website.
-* [ ] The application works on mobile, tablet, and desktop.
-* [ ] The production build completes without errors.
-* [ ] At least eight meaningful Git commits have been created.
-
----
-
 ## 🔮 Future Improvements
 
 Potential future enhancements include:
@@ -332,23 +308,16 @@ Potential future enhancements include:
 
 ---
 
-## 📌 Important Notice
-
-Market prices are indicative and may change depending on location, availability, and market conditions. The information displayed by BazarDor should be treated as a reference rather than a guaranteed selling price.
-
----
-
 ## 👨‍💻 Project Information
 
 **Project Name:** বাজার দর (BazarDor)
-**Assignment:** Programming Hero B14-A7
 **Project Type:** Market Price Tracking Web Application
 **Primary Language:** Bengali
 **Framework:** Next.js
 
 ### 🔗 Project Links
 
-* **Live Website:** Add your deployed website URL.
+* **Live Website:** https://bazar-dor-theta.vercel.app/
 * **GitHub Repository:** https://github.com/UK-Biswas/bazar-dor/
 
 ---
@@ -357,6 +326,3 @@ Market prices are indicative and may change depending on location, availability,
   <strong>🛒 বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।</strong>
 </p>
 
-<p align="center">
-  Built with ❤️ as part of the Programming Hero B14-A7 assignment.
-</p>

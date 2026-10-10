@@ -15,10 +15,8 @@ const ProductDetailsPage = async ({ params }) => {
     redirect(`/signin?callbackUrl=/product/${slug}`);
   }
 
-  // তোমার existing product fetch code নিচে থাকবে
-
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
+    "https://openapi.programming-hero.com/api/bazardor/products",
     {
       cache: "no-store",
     }

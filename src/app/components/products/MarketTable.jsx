@@ -1,3 +1,5 @@
+
+
 const MarketTable = ({ markets = [], unit }) => {
   return (
     <div className="rounded-xl bg-white p-5 shadow-sm">
@@ -9,7 +11,7 @@ const MarketTable = ({ markets = [], unit }) => {
       {markets.length > 0 ? (
         <div className="overflow-x-auto">
 
-          <table className="w-full min-w-[650px] border-collapse text-left">
+          <table className="w-full min-w-162.5 border-collapse text-left">
 
             <thead>
               <tr className="border-y border-gray-200 text-[11px] text-gray-500">
